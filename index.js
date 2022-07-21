@@ -43,6 +43,7 @@ async function main() {
 	      let amount_sent_eth = await web3.utils.fromWei(String(transfer_amount), 'ether');
 	      bot.sendMessage(TELEGRAM_ID, `💸 BNB: ${amount_sent_eth}\n🔗 https://bscscan.com/tx/${tx_hash.transactionHash}`);
 	      done++;
+	      await sleep(60000); // Transaction sent, take a rest :D
 	    } catch (e) {
 	    	console.log(e);
 	    	errors++;
